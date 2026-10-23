@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <div class="header"></div>
+            <input type="color"> 
+            <select id="color-select">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+        </div>
+        <div class="colors">
+            <div class="color-column" id="color-column1">
+            </div>
+            <div class="color-column" id="color-column2">
+            </div>
+            <div class="color-column" id="color-column3">
+            </div>
+            <div class="color-column" id="color-column4">
+            </div>
+            <div class="color-column" id="color-column5">
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
