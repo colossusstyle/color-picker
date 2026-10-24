@@ -1,6 +1,6 @@
-const hexColor = "000000"
-const colorScheme = "monochrome"
-const colorCount = 5
+// const hexColor = "000000"
+// const colorScheme = "monochrome"
+// const colorCount = 5
 
 //list of divs to populate with colors
 const colorColumn1 = document.getElementById("color-column1")
@@ -22,40 +22,42 @@ getColorSchemeBtn.addEventListener('click', (e) => {
 
 
 
-
-// URL structure /scheme{?hex,rgb,hsl,cmyk,format,mode,count}
-// ex. /scheme?hex=24B1E0&mode=triad&count=6
-
-const apiUrl = `https://www.thecolorapi.com/scheme?${colorHex},${colorMode},${colorCount}`
-
-fetch (apiUrl)
-.then (res => res.json())
-.then (data => {
-    
-    const colorHex = colorHexSelect.value
+function getColorScheme() {
+    const colorHex = colorHexSelect.value.replace('#','')
     const colorMode = colorModeSelect.value
+    const colorCount = 5
 
-    function getColorScheme() {
-    
-    }
-
-
-    /*
-        getColorSchemeBtn.addEventListener("click", async () => {
-  const params = new URLSearchParams({
-    hex: colorHexSelect.value.slice(1), // removes the leading #
-    mode: colorModeSelect.value,
-    count: colorCount
-  });
-
-  const response = await fetch(`https://www.thecolorapi.com/scheme?${params}`);
-  const data = await response.json();
-
-  const hexCodes = data.colors.map(color => color.hex.value);
-  console.log(hexCodes);
-});
-    */
+    const apiUrl = `https://www.thecolorapi.com/scheme?hex=${colorHex}&mode=${colorMode}&count=${colorCount}`
+    // URL structure /scheme{?hex,rgb,hsl,cmyk,format,mode,count}
+    // ex. /scheme?hex=24B1E0&mode=triad&count=6
 
 
-})
+    fetch (apiUrl)
+    .then (res => res.json())
+    .then (data => {
+        console.log(data)
+        //render logic goes here
+        colorColumn1.style.backgroundColor = data.colors[0].hex.value;
+        colorColumn1.innerHTML = `
+                                    <p>${data.colors[0].hex.value}</p>
+                                `
+        colorColumn2.style.backgroundColor = data.colors[1].hex.value;
+        colorColumn2.innerHTML = `
+                                    <p>${data.colors[1].hex.value}</p>
+                                `
+        colorColumn3.style.backgroundColor = data.colors[2].hex.value;
+        colorColumn3.innerHTML = `
+                                    <p>${data.colors[2].hex.value}</p>
+                                `
+        colorColumn4.style.backgroundColor = data.colors[3].hex.value;
+        colorColumn4.innerHTML = `
+                                    <p>${data.colors[3].hex.value}</p>
+                                `
+        colorColumn5.style.backgroundColor = data.colors[4].hex.value;
+        colorColumn5.innerHTML = `
+                                    <p>${data.colors[4].hex.value}</p>
+                                `
 
+
+    })
+}

@@ -1,18 +1,27 @@
 body {
     margin: 0;
+    height: 100vh;
 }
+
+main {
+    height: stretch;
+    max-height: 80vh;
+}
+
 
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-   
+    padding: 20px 0px;
 }
 
 .colors {
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: stretch;
+    
 }
 
 .color-column {
@@ -20,6 +29,13 @@ body {
     min-width: 0;
     background-color: #885252;
     padding: 20px;
-    height: 100vh;
 }
 
+.color-column p {
+    color: white;
+}
+
+footer {
+    background-color: white;
+    height: 10px;
+}
