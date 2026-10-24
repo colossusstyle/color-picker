@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}
+
+.colors {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.color-column {
+    flex: 1;
+    min-width: 0;
+    background-color: #885252;
+    padding: 20px;
+    height: 100vh;
+}
+
