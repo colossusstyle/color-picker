@@ -21,13 +21,13 @@ main {
     flex-direction: row;
     width: 100%;
     height: stretch;
-    
+    border: #d3d2d2 solid 1px;
 }
 
 .color-column {
     flex: 1;
     min-width: 0;
-    background-color: #885252;
+    background-color: white;
     padding: 20px;
 }
 
